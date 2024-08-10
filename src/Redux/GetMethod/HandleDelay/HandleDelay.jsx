@@ -1,17 +1,22 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { addNumber, subNumber } from '../../counterSlice';
-import { listOfUserAction } from './listOfUsers';
+import { handleDelayAction } from './handleDelay';
+import { useEffect } from 'react';
 
-export const ListOfUser = () => {
+export const HandleDelay = () => {
 
     const displayNumber = useSelector((state) => state?.counter?.value);
-    const listOfUserReducer = useSelector((state) => state?.listOfUserReducer);
+    const handleDelayReducer = useSelector((state) => state?.handleDelayReducer);
   
     const dispatch = useDispatch();
   
     const handleFetchUserDetails = (pageNo) => {
-        dispatch(listOfUserAction({pageNo: pageNo}))
+        dispatch(handleDelayAction({pageNo: pageNo}))
     }
+
+    useEffect(() => {
+        console.log("NitinConsole", handleDelayReducer);
+    },[handleDelayReducer])
 
     return (
       <>
@@ -24,9 +29,9 @@ export const ListOfUser = () => {
       <br />
       <div className='user-details'>
         {
-        listOfUserReducer?.isListLoading ? 'Loading...' : listOfUserReducer?.dataList?.data.length > 0 ?
+        handleDelayReducer?.isDelayLoading ? 'Loading...' : handleDelayReducer?.delayData?.data.length > 0 ?
         <>
-        {listOfUserReducer?.dataList?.data.map((data, index) => {
+        {handleDelayReducer?.delayData?.data.map((data, index) => {
             return (<>
                       <span>Name: {data?.first_name + " " + data?.last_name}</span>
                       <span>Email: {data?.email}</span>
@@ -34,10 +39,10 @@ export const ListOfUser = () => {
             </>)
         })}
         </>
-        : listOfUserReducer?.dataList?.data?.length === 0 ? <><span>No Data Found</span></> 
-        : listOfUserReducer?.isListError ? 
+        : handleDelayReducer?.delayData?.data?.length === 0 ? <><span>No Data Found</span></> 
+        : handleDelayReducer?.isDelayError ? 
         <>
-          <span>{JSON.stringify(listOfUserReducer?.isListError)}</span>
+          <span>{JSON.stringify(handleDelayReducer?.isDelayError)}</span>
         </> 
         : null
         }
@@ -47,4 +52,4 @@ export const ListOfUser = () => {
 
   }
 
-export default ListOfUser;
+export default HandleDelay;
