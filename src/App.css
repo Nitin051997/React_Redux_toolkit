@@ -1,5 +1,48 @@
 .App {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+button {
+  height: 80px;
+  width: 80px;
+  border-radius: 20px;
+  background-color: yellow;
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+button:hover{
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: 2px solid yellow;
+}
+
+.fetch-data {
+  height: 80px;
+  width: 160px;
+  background-color: green;
+  color: white;
+}
+
+.fetch-data:hover {
+  border: 2px solid green;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+span {
+  font-size: 30px;
+  font-weight: 700;
 }
 
 .App-logo {
