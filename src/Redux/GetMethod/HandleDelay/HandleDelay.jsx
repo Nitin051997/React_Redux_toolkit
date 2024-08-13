@@ -29,7 +29,7 @@ export const HandleDelay = () => {
       <br />
       <div className='user-details'>
         {
-        handleDelayReducer?.isDelayLoading ? 'Loading...' : handleDelayReducer?.delayData?.data.length > 0 ?
+        handleDelayReducer?.isDelayLoading ? 'Loading...' : handleDelayReducer?.delayData?.data ?
         <>
         {handleDelayReducer?.delayData?.data.map((data, index) => {
             return (<>
