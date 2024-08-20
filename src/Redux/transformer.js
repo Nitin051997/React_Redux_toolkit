@@ -7,6 +7,7 @@ import singleUserReducer from "./GetMethod/SingleUser/singleUser";
 import handleDelayReducer from "./GetMethod/HandleDelay/handleDelay";
 import createUserReducer from "./PostMethod/CreateUser/createUser";
 import registerUserReducer from "./PostMethod/RegisterUser/registerUser";
+import customGetDataReducer from "./Custom/API/customGetData";
 
 export const transformer = combineReducers({
         counter: counterReducer,
@@ -17,6 +18,7 @@ export const transformer = combineReducers({
         handleDelayReducer: handleDelayReducer,
         createUserReducer: createUserReducer,
         registerUserReducer: registerUserReducer,
+        customGetDataReducer: customGetDataReducer,
 })
 
 export default transformer;
