@@ -5,7 +5,7 @@ export const listOfUserAction = createAsyncThunk(
     async (value, { rejectWithValue }) => {
         try {
             const response = await fetch(`https://reqres.in/api/users?page=${value?.pageNo}`);
-            if (!response.ok) {
+            if (!response.ok || value?.pageNo < 2) {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
@@ -17,7 +17,7 @@ export const listOfUserAction = createAsyncThunk(
 )
 
 const initialState = {
-    isListLoading: false,
+    isListLoading: true,
     dataList: false,
     isListError: false,
 }

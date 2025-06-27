@@ -8,6 +8,9 @@ import handleDelayReducer from "./GetMethod/HandleDelay/handleDelay";
 import createUserReducer from "./PostMethod/CreateUser/createUser";
 import registerUserReducer from "./PostMethod/RegisterUser/registerUser";
 import customGetDataReducer from "./Custom/API/customGetData";
+import listofemployeesReducer from "../Components/ResetRedux/listofemployees";
+import AbortActionReducer from "../Components/AxiosMethos/abortAction";
+import marvelapiReducer from "../Components/MarvelApi/marvelapi";
 
 export const transformer = combineReducers({
         counter: counterReducer,
@@ -19,6 +22,9 @@ export const transformer = combineReducers({
         createUserReducer: createUserReducer,
         registerUserReducer: registerUserReducer,
         customGetDataReducer: customGetDataReducer,
+        listofemployeesReducer: listofemployeesReducer,
+        AbortActionReducer: AbortActionReducer,
+        marvelapiReducer: marvelapiReducer,
 })
 
 export default transformer;
